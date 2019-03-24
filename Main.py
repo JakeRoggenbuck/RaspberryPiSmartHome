@@ -20,22 +20,22 @@ for x in range(0,1000):
 
 	# checks for input "DL 0" or "DL0"
 	if commandInput == "DL 0" or commandInput == "DL0":
-		GPIO.output(relayNumber1, GPIO.LOW)
+		GPIO.output(relayNumber1, GPIO.HIGH)
 		print("Desk-Light Off")
 
 	# checks for input "DL 1" or "DL1"
-	if commandInput == "DL 1" or commandInput == "Dl1":
-		GPIO.output(relayNumber1, GPIO.HIGH)
+	if commandInput == "DL 1" or commandInput == "DL1":
+		GPIO.output(relayNumber1, GPIO.LOW)
 		print("Desk-Light On")
 
 	# checks for input "CS 0" or "CS0"
 	if commandInput == "CS 0" or commandInput == "CS0":
-		GPIO.output(relayNumber2, GPIO.LOW)
+		GPIO.output(relayNumber2, GPIO.HIGH)
 		print("Charger Station Off")
 
 	# checks for input "CS 1" or "CS1"
 	if commandInput == "CS 1" or commandInput == "CS1":
-		GPIO.output( relayNumber2, GPIO.HIGH)
+		GPIO.output( relayNumber2, GPIO.LOW)
 		print("Charger Station On")
 
 	# checks for input "Help" or "help"
