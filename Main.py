@@ -5,8 +5,8 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
 # set relay GPIO pins
-relayNumber1 = 15
-relayNumber2 = 16
+relayNumber1 = 26
+relayNumber2 = 19
 
 # set pins as outputs
 GPIO.setup(relayNumber1, GPIO.OUT)
