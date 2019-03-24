@@ -13,7 +13,7 @@ GPIO.setup(relayNumber1, GPIO.OUT)
 GPIO.setup(relayNumber2, GPIO.OUT)
 
 #for loop to repeat
-for x in range(0,1000)
+for x in range(0,1000);
 
     # ask for input
 	commandInput = input("Command Key: ")
