@@ -14,6 +14,12 @@ relayNumber8 = 17
 
 GPIO.setup(relayNumber1, GPIO.OUT)
 GPIO.setup(relayNumber2, GPIO.OUT)
+GPIO.setup(relayNumber3, GPIO.OUT)
+GPIO.setup(relayNumber4, GPIO.OUT)
+GPIO.setup(relayNumber5, GPIO.OUT)
+GPIO.setup(relayNumber6, GPIO.OUT)
+GPIO.setup(relayNumber7, GPIO.OUT)
+GPIO.setup(relayNumber8, GPIO.OUT)
 
 for x in range(0, 20):
     
