@@ -37,6 +37,7 @@ for x in range(0,1000):
 		# sets relayNumber + character number 0 e.g. 7 + Status to True For later recall
 		relayNameLocation0Status = relayNameLocation0 + "Status"
 		relayNameLocation0Status = True
+		print("commandInput[1] == h")
 
 	# checks if commandInput character number 1 is l
 	if commandInput[1] == "l":
