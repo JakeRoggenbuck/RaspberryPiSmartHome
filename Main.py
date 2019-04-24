@@ -8,11 +8,11 @@ GPIO.setmode(GPIO.BCM)
 relayList = [26, 19, 13, 6, 3, 22, 27, 17]
 
 # sets up the relays
-for reley in range(1, 8):
+for relay in range(1, 8):
 	# sets relayNumber + relay or the number of the relay to the corrisponding GPIO port
 	# e.g. relayNumber1 = 26
 	relayName = "relayNumber" + relay
-	relayLocation = relayList[reley - 1]
+	relayLocation = relayList[relay - 1]
 	relayName = relayLocation
 	# sets the Status of each relay name to False for recall later
 	relayNameStatus = relayName + Status
