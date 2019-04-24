@@ -15,9 +15,10 @@ for reley in range(1, 8):
 	relayLocation = relayList[reley - 1]
 	relayName = relayLocation
 	# sets the Status of each relay name to False for recall later
-	relayNumber + relay + Status = False
+	relayNameStatus = relayName + Status
+	relayNameStatus = False
 	# sets the GPIO output of relayNumber + relay
-	GPIO.setup(relayNumber + relay, GPIO.OUT)
+	GPIO.setup(relayName, GPIO.OUT)
 
 # for loop to repeat
 for x in range(0,1000):
@@ -29,20 +30,24 @@ for x in range(0,1000):
 	if commandInput[1] == "h":
 		# sets the relayNumber of character number 0 to HIGH
 		# e.g. GPIO.output(relayNumber7, GPIO.HIGH)
-		GPIO.output(relayNumber + commandInput[0], GPIO.HIGH)
+		relayNameLocation0 = relayNumber + commandInput[0]
+		GPIO.output(relayNameLocation0, GPIO.HIGH)
 		# prints the character number 0 e.g. 7 prints it to be High e.g. 7HIGH
 		print(commandInput[0] + "HIGH")
 		# sets relayNumber + character number 0 e.g. 7 + Status to True For later recall
-		relayNumber + commandInput[0] + Status = True
+		relayNameLocation0Status = relayNameLocation0 + Status
+		relayNameLocation0Status = True
 
 	# checks if commandInput character number 1 is l
 	if commandInput[1] == "l":
 		# sets the relayNumber of character number 0 to Low
 		# e.g. GPIO.output(relayNumber3, GPIO.LOW)
+		relayNameLocation0 = relayNumber + commandInput[0]
 		GPIO.output(relayNumber + commandInput[0], GPIO.LOW)
 		# prints the character number 0 e.g. 3 prints it to be LOW e.g. 3LOW
 		print(commandInput[0] + "LOW")
 		# sets relayNumber + character number 0 e.g. 3 + Status to False For later recall
+		relayNameLocation0Status = relayNameLocation0 + Status
 		relayNumber + commandInput[0] + Status = False
 
 	# checks for input "on"
