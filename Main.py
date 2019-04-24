@@ -4,21 +4,18 @@ import RPi.GPIO as GPIO
 # setmode something
 GPIO.setmode(GPIO.BCM)
 
-# set relay GPIO pins
-relayNumber1 = 26
-relayNumber2 = 19
+# lists the GPIO pins in list for easy acsses
+relayList = [26, 19, 13, 6, 3, 22, 27, 17]
 
-# set relay GPIO pin Status
-relayNumber1Status = False
-relayNumber2Status = False
-
-# set pins as outputs
-GPIO.setup(relayNumber1, GPIO.OUT)
-GPIO.setup(relayNumber2, GPIO.OUT)
-
-# set pins to off to start
-GPIO.output(relayNumber1, GPIO.HIGH)
-GPIO.output(relayNumber2, GPIO.HIGH)
+# sets up the relays
+for reley in range(1, 8):
+	# sets relayNumber + relay or the number of the relay to the corrisponding GPIO port
+	# e.g. relayNumber1 = 26
+	relayNumber + relay = relayList[reley - 1]
+	# sets the Status of each relay name to False for recall later
+	relayNumber + relay + Status = False
+	# sets the GPIO output of relayNumber + relay
+	GPIO.setup(relayNumber + relay, GPIO.OUT)
 
 # for loop to repeat
 for x in range(0,1000):
@@ -26,72 +23,49 @@ for x in range(0,1000):
 	# ask for input
 	commandInput = input("Command Key: ")
 
-	# checks for input "l0" or "L0"
-	if commandInput == "l0" or commandInput == "L0":
-		GPIO.output(relayNumber1, GPIO.HIGH)
-		print("Desk-Light Off")
-		relayNumber1Status = False
+	# checks if commandInput character number 1 is h
+	if commandInput[1] = "h":
+		# sets the relayNumber of character number 0 to HIGH
+		# e.g. GPIO.output(relayNumber7, GPIO.HIGH)
+		GPIO.output(relayNumber + commandInput[0], GPIO.HIGH)
+		# prints the character number 0 e.g. 7 prints it to be High e.g. 7HIGH
+		print(commandInput[0] + "HIGH")
+		# sets relayNumber + character number 0 e.g. 7 + Status to True For later recall
+		relayNumber + commandInput[0] + Status = True
 
-	# checks for input "l1" or "L1"
-	if commandInput == "l1" or commandInput == "L1":
-		GPIO.output(relayNumber1, GPIO.LOW)
-		print("Desk-Light On")
-		relayNumber1Status = True
+	# checks if commandInput character number 1 is l
+	if commandInput[1] = "l":
+		# sets the relayNumber of character number 0 to Low
+		# e.g. GPIO.output(relayNumber3, GPIO.LOW)
+		GPIO.output(relayNumber + commandInput[0], GPIO.LOW)
+		# prints the character number 0 e.g. 3 prints it to be LOW e.g. 3LOW
+		print(commandInput[0] + "LOW")
+		# sets relayNumber + character number 0 e.g. 3 + Status to False For later recall
+		relayNumber + commandInput[0] + Status = False
 
+	# checks for input "on"
+	if commandInput == "on":
+		# turns all relays on
+		for relay in range(1, 8):
+			# relayNumber + relay e.g. GPIO.output(relayNumber5, GPIO.High)
+			GPIO.output(relayNumber + relay, GPIO.High)
+			# sets the relayNumber + relay + Status to True for later recall
+			relayNumber + relay + Status = True
+			# prints "All One" doh!
+			print("All One")
 
+	# checks for input "off"
+	if commandInput == "off":
+		for relay in range(1, 8):
+			# relayNumber + relay e.g. GPIO.output(relayNumber6, GPIO.LOW)
+			GPIO.output(relayNumber + relay, GPIO.LOW)
+			# sets the relayNumber + relay + Status to False for later recall
+			relayNumber + relay + Status = False
+			# prints "All Off" doh!
+			print("All Off")
 
-	# checks for input "c0" or "C0"
-	if commandInput == "c0" or commandInput == "C0":
-		GPIO.output(relayNumber2, GPIO.HIGH)
-		print("Charger Station Off")
-		relayNumber2Status = False
-
-	# checks for input "c1" or "C1"
-	if commandInput == "c1" or commandInput == "C1":
-		GPIO.output( relayNumber2, GPIO.LOW)
-		print("Charger Station On")
-		relayNumber2Status = True
-
-
-
-	# checks for input "Off" or "off"
-	if commandInput == "Off" or commandInput == "off":
-		GPIO.output( relayNumber1, GPIO.HIGH)
-		GPIO.output( relayNumber2, GPIO.HIGH)
-		print("All Off")
-		relayNumber1Status = False
-		relayNumber2Status = False
-
-	# checks for input "On" or "on"
-	if commandInput == "On" or commandInput == "on":
-		GPIO.output( relayNumber1, GPIO.LOW)
-		GPIO.output( relayNumber2, GPIO.LOW)
-		print("All On")
-		relayNumber1Status = True
-		relayNumber2Status = True
-
-	# checks for input "?"
+	# checks for input "?" or "/"
 	if commandInput == "?" or commandInput == "/":
-		print("relayNumber1/desk-light:" + str(relayNumber1Status))
-		print("relayNumber2/charger station:" + str(relayNumber2Status))
-
-	# checks for input "Help" or "help"
-	if commandInput == "Help" or commandInput == "help":
-		# shows Commands
-		print("""
-		Commands:
-		"l0" or "L0"
-		"l1" or "L1"
-		"c0" or "C0"
-		"c1" or "C1"
-		or "more help"
-		""")
-
-		# checks for input "more help" or "More Help"
-		if commandInput == "more help" or commandInput == "More Help":
-			# shows how to use commands
-			print("""
-			L is desk-light
-			C is charger station
-			use 1 0r 0 after to turn it on or off
-			""")
+		# prints the status of all relays
+		for relay in range(1, 8):
+			print("relayNumber" + relay + ":" + str(relayNumber + relay + Status))
