@@ -24,7 +24,7 @@ for x in range(0,1000):
 	commandInput = input("Command Key: ")
 
 	# checks if commandInput character number 1 is h
-	if commandInput[1] = "h":
+	if commandInput[1] == "h":
 		# sets the relayNumber of character number 0 to HIGH
 		# e.g. GPIO.output(relayNumber7, GPIO.HIGH)
 		GPIO.output(relayNumber + commandInput[0], GPIO.HIGH)
@@ -34,7 +34,7 @@ for x in range(0,1000):
 		relayNumber + commandInput[0] + Status = True
 
 	# checks if commandInput character number 1 is l
-	if commandInput[1] = "l":
+	if commandInput[1] == "l":
 		# sets the relayNumber of character number 0 to Low
 		# e.g. GPIO.output(relayNumber3, GPIO.LOW)
 		GPIO.output(relayNumber + commandInput[0], GPIO.LOW)
