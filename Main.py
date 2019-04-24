@@ -48,26 +48,30 @@ for x in range(0,1000):
 		print(commandInput[0] + "LOW")
 		# sets relayNumber + character number 0 e.g. 3 + Status to False For later recall
 		relayNameLocation0Status = relayNameLocation0 + Status
-		relayNumber + commandInput[0] + Status = False
+		relayNameLocation0Status = True
 
 	# checks for input "on"
 	if commandInput == "on":
 		# turns all relays on
 		for relay in range(1, 8):
+			relayName = relayNumber + relay
 			# relayNumber + relay e.g. GPIO.output(relayNumber5, GPIO.High)
-			GPIO.output(relayNumber + relay, GPIO.High)
+			GPIO.output(relayName, GPIO.High)
 			# sets the relayNumber + relay + Status to True for later recall
-			relayNumber + relay + Status = True
+			relayNameStatus = relayName + Status
+			relayNameStatus = True
 			# prints "All One" doh!
 			print("All One")
 
 	# checks for input "off"
 	if commandInput == "off":
 		for relay in range(1, 8):
+			relayName = relayNumber + relay
 			# relayNumber + relay e.g. GPIO.output(relayNumber6, GPIO.LOW)
-			GPIO.output(relayNumber + relay, GPIO.LOW)
+			GPIO.output(relayName, GPIO.LOW)
 			# sets the relayNumber + relay + Status to False for later recall
-			relayNumber + relay + Status = False
+			relayNameStatus = relayName + Status
+			relayNameStatus = False
 			# prints "All Off" doh!
 			print("All Off")
 
@@ -75,4 +79,6 @@ for x in range(0,1000):
 	if commandInput == "?" or commandInput == "/":
 		# prints the status of all relays
 		for relay in range(1, 8):
-			print("relayNumber" + relay + ":" + str(relayNumber + relay + Status))
+			relayName = relayNumber + relay
+			relayNameStatus = relayName + Status
+			print("relayNumber" + relay + ":" + str(relayNameStatus))
