@@ -8,7 +8,7 @@ GPIO.setmode(GPIO.BCM)
 relayList = [26, 19, 13, 6, 3, 22, 27, 17]
 
 # sets up the relays
-for relay in range(1, 8):
+for relay in range(1, 9):
 	# sets relayNumber + relay or the number of the relay to the corrisponding GPIO port
 	# e.g. relayNumber1 = 26
 	relayName = "relayNumber" + str(relay)
@@ -55,7 +55,7 @@ for x in range(0,1000):
 	# checks for input "on"
 	if commandInput == "on":
 		# turns all relays on
-		for relay in range(1, 8):
+		for relay in range(1, 9):
 			relayName = "relayNumber" + str(relay)
 			# relayNumber + relay e.g. GPIO.output(relayNumber5, GPIO.High)
 			GPIO.output(relayName, GPIO.High)
@@ -67,7 +67,7 @@ for x in range(0,1000):
 
 	# checks for input "off"
 	if commandInput == "off":
-		for relay in range(1, 8):
+		for relay in range(1, 9):
 			relayName = "relayNumber" + str(relay)
 			# relayNumber + relay e.g. GPIO.output(relayNumber6, GPIO.LOW)
 			GPIO.output(relayName, GPIO.LOW)
@@ -80,7 +80,7 @@ for x in range(0,1000):
 	# checks for input "?" or "/"
 	if commandInput == "?" or commandInput == "/":
 		# prints the status of all relays
-		for relay in range(1, 8):
+		for relay in range(1, 9):
 			relayName = "relayNumber" + str(relay)
 			relayNameStatus = str(relayName) + "Status"
 			print("relayNumber" + str(relay) + ":" + str(relayNameStatus))
