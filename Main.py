@@ -15,7 +15,7 @@ for relay in range(1, 8):
 	relayLocation = relayList[relay - 1]
 	relayName = relayLocation
 	# sets the Status of each relay name to False for recall later
-	relayNameStatus = relayName + Status
+	relayNameStatus = relayName + "Status"
 	relayNameStatus = False
 	# sets the GPIO output of relayNumber + relay
 	GPIO.setup(relayName, GPIO.OUT)
@@ -35,7 +35,7 @@ for x in range(0,1000):
 		# prints the character number 0 e.g. 7 prints it to be High e.g. 7HIGH
 		print(commandInput[0] + "HIGH")
 		# sets relayNumber + character number 0 e.g. 7 + Status to True For later recall
-		relayNameLocation0Status = relayNameLocation0 + Status
+		relayNameLocation0Status = relayNameLocation0 + "Status"
 		relayNameLocation0Status = True
 
 	# checks if commandInput character number 1 is l
@@ -47,7 +47,7 @@ for x in range(0,1000):
 		# prints the character number 0 e.g. 3 prints it to be LOW e.g. 3LOW
 		print(commandInput[0] + "LOW")
 		# sets relayNumber + character number 0 e.g. 3 + Status to False For later recall
-		relayNameLocation0Status = relayNameLocation0 + Status
+		relayNameLocation0Status = relayNameLocation0 + "Status"
 		relayNameLocation0Status = True
 
 	# checks for input "on"
@@ -58,7 +58,7 @@ for x in range(0,1000):
 			# relayNumber + relay e.g. GPIO.output(relayNumber5, GPIO.High)
 			GPIO.output(relayName, GPIO.High)
 			# sets the relayNumber + relay + Status to True for later recall
-			relayNameStatus = relayName + Status
+			relayNameStatus = relayName + "Status"
 			relayNameStatus = True
 			# prints "All One" doh!
 			print("All One")
@@ -70,7 +70,7 @@ for x in range(0,1000):
 			# relayNumber + relay e.g. GPIO.output(relayNumber6, GPIO.LOW)
 			GPIO.output(relayName, GPIO.LOW)
 			# sets the relayNumber + relay + Status to False for later recall
-			relayNameStatus = relayName + Status
+			relayNameStatus = relayName + "Status"
 			relayNameStatus = False
 			# prints "All Off" doh!
 			print("All Off")
@@ -80,5 +80,5 @@ for x in range(0,1000):
 		# prints the status of all relays
 		for relay in range(1, 8):
 			relayName = "relayNumber" + str(relay)
-			relayNameStatus = relayName + Status
+			relayNameStatus = relayName + "Status"
 			print("relayNumber" + str(relay) + ":" + str(relayNameStatus))
