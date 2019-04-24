@@ -25,9 +25,10 @@ for x in range(0,1000):
 
 	# ask for input
 	commandInput = input("Command Key: ")
+	print(commandInput[1])
 
 	# checks if commandInput character number 1 is h
-	if commandInput[2] == "h":
+	if commandInput[1] == "h":
 		# sets the relayNumber of character number 0 to HIGH
 		# e.g. GPIO.output(relayNumber7, GPIO.HIGH)
 		relayNameLocation0 = "relayNumber" + str(commandInput[0])
