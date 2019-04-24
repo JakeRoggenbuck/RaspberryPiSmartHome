@@ -11,7 +11,9 @@ relayList = [26, 19, 13, 6, 3, 22, 27, 17]
 for reley in range(1, 8):
 	# sets relayNumber + relay or the number of the relay to the corrisponding GPIO port
 	# e.g. relayNumber1 = 26
-	relayNumber + relay = relayList[reley - 1]
+	relayName = relayNumber + relay
+	relayLocation = relayList[reley - 1]
+	relayName = relayLocation
 	# sets the Status of each relay name to False for recall later
 	relayNumber + relay + Status = False
 	# sets the GPIO output of relayNumber + relay
