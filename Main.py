@@ -25,14 +25,14 @@ for x in range(0,1000):
 
 	# ask for input
 	commandInput = input("Command Key: ")
-	print(commandInput[1])
 
 	# checks if commandInput character number 1 is h
 	if commandInput[1] == "h":
 		# sets the relayNumber of character number 0 to HIGH
 		# e.g. GPIO.output(relayNumber7, GPIO.HIGH)
 		relayNameLocation0 = "relayNumber" + str(commandInput[0])
-		GPIO.output(relayList[commandInput[0] -1], GPIO.HIGH)
+		newRelayNameLocation = commandInput[0] -1
+		GPIO.output(relayList[newRelayNameLocation], GPIO.HIGH)
 		# prints the character number 0 e.g. 7 prints it to be High e.g. 7HIGH
 		print(commandInput[0] + "HIGH")
 		# sets relayNumber + character number 0 e.g. 7 + Status to True For later recall
@@ -45,7 +45,8 @@ for x in range(0,1000):
 		# sets the relayNumber of character number 0 to Low
 		# e.g. GPIO.output(relayNumber3, GPIO.LOW)
 		relayNameLocation0 = "relayNumber" + str(commandInput[0])
-		GPIO.output(relayList[commandInput[0] -1], GPIO.LOW)
+		newRelayNameLocation = commandInput[0] -1
+		GPIO.output(relayList[newRelayNameLocation], GPIO.LOW)
 		# prints the character number 0 e.g. 3 prints it to be LOW e.g. 3LOW
 		print(commandInput[0] + "LOW")
 		# sets relayNumber + character number 0 e.g. 3 + Status to False For later recall
