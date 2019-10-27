@@ -1,8 +1,8 @@
 # import the libraries
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 
 # setmode something
-#GPIO.setmode(GPIO.BCM)
+GPIO.setmode(GPIO.BCM)
 
 # lists the GPIO pins in list for easy acsses
 relayList = [26, 19, 13, 6, 3, 22, 27, 17]
@@ -22,11 +22,11 @@ def setMode():
     print("Set Mode")
     setWhat = int(input("What relay would you like to set? 0-8 "))
     if relayState[setWhat] == True:
-        #GPIO.output(relayList[setWhat], GPIO.LOW)
+        GPIO.output(relayList[setWhat], GPIO.LOW)
         print("Relay " + str(setWhat) + " on pin " + str(relayList[setWhat]) + " has been set LOW")
         relayState[setWhat] = False 
     elif relayState[setWhat] == False:
-        #GPIO.output(relayList[setWhat], GPIO.HIGH)
+        GPIO.output(relayList[setWhat], GPIO.HIGH)
         print("Relay " + str(setWhat) + " on pin " + str(relayList[setWhat]) + " has been set HIGH")
         relayState[setWhat] = True
     else:
