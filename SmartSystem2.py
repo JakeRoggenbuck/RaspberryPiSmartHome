@@ -1,6 +1,6 @@
 # import the libraries
 #import RPi.GPIO as GPIO
-
+import os
 # setmode something
 #GPIO.setmode(GPIO.BCM)
 
@@ -57,11 +57,14 @@ while(True):
     commandInput = input("$ ")
 
     if commandInput[0:1] == "q":
+        os.system("clear")
         stopMode()
 
     elif commandInput[0:2] == "ls":
+        os.system("clear")
         checkMode()
 
     elif commandInput[0:3] == "set":
+        os.system("clear")
         setMode()
 
