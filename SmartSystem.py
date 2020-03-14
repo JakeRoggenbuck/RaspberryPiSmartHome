@@ -7,7 +7,7 @@ class Relay:
             GPIO.setup(pin, GPIO.OUT)
             print('OK')
         except:
-            print(f'Error occurred when trying to init relay on pin {pin}')
+            print('Error occurred when trying to init relay on pin ' + pin)
             exit()
 
     def toggle(obj):
