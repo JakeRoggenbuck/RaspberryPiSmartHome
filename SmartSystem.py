@@ -1,3 +1,8 @@
+# import the libraries
+import RPi.GPIO as GPIO
+# setmode something
+GPIO.setmode(GPIO.BCM)
+
 class Relay:
     def __init__(self, pin, name, status='LOW'):
         self.pin = pin
