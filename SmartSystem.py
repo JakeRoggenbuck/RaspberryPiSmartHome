@@ -24,7 +24,7 @@ class Relay:
             obj.status = 'HIGH'
 
     def set(obj, fstat):
-        GPIO.output(obj.pin, GPIO.str(fstat))
+        GPIO.output(obj.pin, eval(GPIO.fstat)
         obj.status = fstat
 
 
