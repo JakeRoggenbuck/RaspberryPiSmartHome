@@ -17,14 +17,14 @@ class Relay:
 
     def toggle(obj):
         if obj.status == 'HIGH':
-            PIO.output(obj.pin, GPIO.LOW)
+            GPIO.output(obj.pin, GPIO.LOW)
             obj.status = 'LOW'
         else:
-            PIO.output(obj.pin, GPIO.HIGH)
+            GPIO.output(obj.pin, GPIO.HIGH)
             obj.status = 'HIGH'
 
     def set(obj, fstat):
-        PIO.output(obj.pin, GPIO.fstat)
+        GPIO.output(obj.pin, GPIO.fstat)
         obj.status = fstat
 
 
