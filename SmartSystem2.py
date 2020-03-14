@@ -1,6 +1,6 @@
 # import the libraries
 #import RPi.GPIO as GPIO
-
+import os
 # setmode something
 #GPIO.setmode(GPIO.BCM)
 
