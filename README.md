@@ -1,6 +1,6 @@
 # RaspberryPiSmartHome
 
-### GSSL
+### About
 GSSL is a simple raspberry pi gpio object library
 
 ### Requirements
