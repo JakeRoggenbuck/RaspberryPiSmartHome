@@ -4,7 +4,7 @@
 GSSL is a simple raspberry pi gpio object library
 
 ### Requirements
-- You will need "PRi.GPIO". This is pre installed on raspberry pies.
+You will need "PRi.GPIO". This is pre installed on raspberry pies.
 
 ### Uses
 First init an object by "light = Relay(<pin number>, <'Human readable name'>)"
