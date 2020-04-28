@@ -13,8 +13,10 @@ if sys.argv[1] == "-t":
     exec(f"{sys.argv[2]}.toggle()")
     print(f"{sys.argv[2]}", "is now", eval(f"{sys.argv[2]}.status"))
 
-#elif sys.argv[1] == "-s":
+elif sys.argv[1] == "-s":
+    print(eval(f"{sys.argv[2]}.status"))
     exec(f"{sys.argv[2]}.set({sys.argv[3]})")
+    print(f"{sys.argv[2]}", "is now", eval(f"{sys.argv[2]}.status"))
 
 else:
     print("Not a command, use the man page")
