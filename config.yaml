@@ -1,0 +1,3 @@
+- {name: "light", desc: "A light", pin: 19}
+- {name: "charger", desc: "A carger", pin: 12}
+- {name: "server", desc: "A big server", pin: 14}
