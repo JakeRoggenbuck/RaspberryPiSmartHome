@@ -9,3 +9,4 @@ elif sys.argv[1] == "-s":
 
 else:
     print("Not a command, use the man page")
+
