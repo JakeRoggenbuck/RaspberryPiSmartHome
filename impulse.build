@@ -1,0 +1,10 @@
+user_=$(who | awk '{print $1}')
+cp rpi-smart-system /bin/
+
+mkdir /home/$user_/.local/share/rpi-smart-system
+mkdir /home/$user_/.config/rpi-smart-system
+
+mv config.yaml /home/$user_/.config/rpi-smart-system/
+
+cp impulse.1 /usr/share/man/man1/rpi-smart-system.1
+gzip /usr/share/man/man1/rpi-smart-system.1
