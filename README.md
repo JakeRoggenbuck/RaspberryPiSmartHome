@@ -16,9 +16,9 @@ You can also toggle the relay by `light.toggle()`
 
 ### Useing rpi smart system (frontend)
 #### Flags
--v	Show relay setup verbosely
--t	Toggle a relay using name
--s	Set a relay to value using name
--l	List all relays and their status
+-v	Show relay setup verbosely<br>
+-t	Toggle a relay using name<br>
+-s	Set a relay to value using name<br>
+-l	List all relays and their status<br>
 
 read manpage for more frontend info
