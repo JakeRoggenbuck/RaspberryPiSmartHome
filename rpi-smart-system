@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
 import gpio_smart_system_lib as gssl
+from pathlib import Path
 import yaml
 import sys
 
-with open(f'config.yaml') as f:
+with open(f'{str(Path.home())}/.config/impulse/config.yaml') as f:
     config = yaml.load(f, Loader=yaml.FullLoader)
 
 for relay in config:
